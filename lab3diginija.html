@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Fake Parent</title>
+</head>
+<body>
+
+    <p>
+        <label for="message">Log Message:</label>
+        <input type="text" id="message" value="User logged in">
+        <input type="button" id="send_message_button" value="Send Message">
+    </p>
+
+    <iframe
+        id="s_iframe"
+        src="https://html5server.digi.ninja/s_child.html?origin=https://html5.digi.ninja"
+ 	width="800"
+   	height="500">
+    </iframe>
+
+    <script>
+
+        var receiver = document.getElementById("s_iframe");
+
+        function send_message() {
+
+            let message =
+                document.getElementById("message").value;
+
+            receiver.contentWindow.postMessage(
+                message,
+                "*"
+            );
+        }
+
+        const sendMessageButton =
+            document.getElementById("send_message_button");
+
+        sendMessageButton.addEventListener(
+            "click",
+            send_message,
+            false
+        );
+
+    </script>
+
+</body>
+</html>
