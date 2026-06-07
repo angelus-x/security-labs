@@ -85,7 +85,7 @@ User role updated to Administrator
 
 ## Screenshot
 
-![Log Injection](lab3-log-injection.png)
+![Log Injection](images/lab3-log-injection.png)
 
 *Figure 1: Attacker-controlled parent page successfully injecting forged log entries into the receiver iframe.*
 
